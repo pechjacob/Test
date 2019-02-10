@@ -1,28 +1,86 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <!--Begin head-->
-  <head>
-      <meta charset="utf-8">
-      <meta name="description" content="A page for exploring HTML documents">
-      <title>Basic HTML</title>
-  </head>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A page for exploring HTML documents">
+  <title>Basic HTML</title>
+  <link rel="stylesheet" href="style.css">
+  <!--Begin Style-->
+  <style>
+
+  </style>
+</head>
 
 <!--Begin body-->
-  <body>
-    <h1>Page content</h1>
-    <p>The main <b>page</b> content appears here</p>
-    <pre>What am I? Look at this character &amp; &trade;</pre>
-    <h4>What <i>am</i> I?</h4>
-    <p><b>410 North 3rd St</b><br> &nbsp;&nbsp;Harrisville, Louisiana 658655
-      more stuff
-    </p>
-    <p>testasdfasdfasdfasdfasdfasdfasdfasdf
-      <img src="../Images/whitehat.jpg" width="100" height="100" alt="test" align="right">
-      asdfasdfasdfasdfasdfasdf <br>
-      asdfasdfasdf <br>
-      asdfasdf <br>
-      change
-    </p>
-  </body>
+
+<body>
+  <h1>Page content</h1>
+  <p>The main <b>page</b> content appears here</p>
+  <pre>What am I? Look at this character &amp; &trade;</pre>
+  <h4>What <i>am</i> I?</h4>
+  <p><b>410 North 3rd St</b><br> &nbsp;&nbsp;Harrisville, Louisiana 658655
+    more stuff
+  </p>
+  <p>testasdfasdfasdfasdfasdfasdfasdfasdf
+    <img src="../Images/whitehat.jpg" width="100" height="100" alt="test" align="right">
+    asdfasdfasdfasdfasdfasdf <br>
+    asdfasdfasdf <br>
+    asdfasdf <br>
+    change
+    <a href="same.htm" rel="alternate" class="ref">same folder</a>
+    <a href="Info/About.htm" class="href">different folder</a>
+  </p>
+
+  <div>
+    <ul>
+      <li>Tab 1</li>
+      <li>Tab 2</li>
+      <li>Tab 3</li>
+    </ul>
+
+  </div>
+  <div id="containers">
+    <div id="tabPanel1">
+      <h4>HTML</h4>
+      <p><strong>Hypertext Markup Language</strong>
+    Controls the structure....
+      </p>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+    //tabbed panels
+    //declare globals to hold all the links and all the panel elements
+var tabLinks;
+var tabPanels;
+    window.onload = function(){
+      //when the page loads, grab the li elements
+      tabLinks =
+    document.getElementById("tabs").getElementsByTagName("li");
+      //Now get all the tab panel container divs
+      tabPanels =
+    document.getElementById("containers").getElementsByTagName("div");
+
+      //activate the first one
+      displayPanel(tabLinks[0]);
+
+      //attach event listener to links using onclick and onfocus,
+      //fire the the displayPanel function, return false to
+      //disable the link
+      for (var i = 0; i < tabLinks.length; i++){
+        tabLinks[i].onclick = function(){
+            displayPanel(this);
+            return false;
+        }
+      }
+    }
+
+    function displayPanel(){
+      //respond to tab clicks
+      //change panel dispaly and activate tabs
+    }
+</script>
+
 </html>

@@ -1,0 +1,12 @@
+html{
+  background-color: rgb(171, 85, 26)
+}
+body {
+width: 80%;
+margin: 0 auto;
+background-color: white;
+}
+h1 {
+  background: gray;
+  color: white;
+}
